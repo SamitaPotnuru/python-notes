@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Notes — Basic to Advanced</title>
+<meta name="description" content="Simple Python notes from basic to advanced. One-line definitions, code and examples for every student." />
+<style>
+  :root{
+    --bg:#0f172a; --card:#111827; --soft:#1f2937; --line:#334155;
+    --text:#e5e7eb; --muted:#94a3b8; --accent:#facc15; --accent2:#38bdf8;
+    --code-bg:#0b1020; --tag:#22d3ee;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:linear-gradient(180deg,#0b1020,#0f172a);color:var(--text);line-height:1.6}
+  header{padding:48px 20px 24px;text-align:center;border-bottom:1px solid var(--line)}
+  header h1{margin:0;font-size:2.4rem;color:var(--accent)}
+  header p{margin:8px 0 0;color:var(--muted)}
+  .layout{display:grid;grid-template-columns:260px 1fr;gap:24px;max-width:1200px;margin:0 auto;padding:24px 20px}
+  nav{position:sticky;top:20px;align-self:start;background:var(--card);border:1px solid var(--line);
+      border-radius:12px;padding:16px;max-height:calc(100vh - 40px);overflow:auto}
+  nav h3{margin:0 0 10px;font-size:0.9rem;color:var(--accent2);text-transform:uppercase;letter-spacing:1px}
+  nav a{display:block;color:var(--text);text-decoration:none;padding:6px 8px;border-radius:6px;font-size:0.92rem}
+  nav a:hover{background:var(--soft);color:var(--accent)}
+  main{display:flex;flex-direction:column;gap:18px}
+  .topic{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .topic h2{margin:0 0 6px;color:var(--accent);font-size:1.35rem}
+  .tag{display:inline-block;background:var(--soft);color:var(--tag);font-size:0.7rem;
+       padding:2px 8px;border-radius:99px;margin-left:8px;vertical-align:middle;letter-spacing:1px}
+  .def{margin:6px 0 12px;color:var(--text)}
+  .label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:10px 0 4px}
+  pre{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;
+      padding:12px 14px;overflow-x:auto;margin:0;font-size:0.88rem}
+  code{font-family:"SF Mono",Menlo,Consolas,monospace;color:#e2e8f0}
+  .ex{color:#a7f3d0}
+  footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:0.85rem;border-top:1px solid var(--line)}
+  @media (max-width:820px){
+    .layout{grid-template-columns:1fr}
+    nav{position:static;max-height:none}
+    header h1{font-size:1.8rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Python Notes</h1>
+  <p>Simple, clear notes — from basic to advanced. For every student.</p>
+</header>
+
+<div class="layout">
+  <nav>
+    <h3>Contents</h3>
+    <a href="#intro">1. What is Python</a>
+    <a href="#variables">2. Variables</a>
+    <a href="#datatypes">3. Data Types</a>
+    <a href="#operators">4. Operators</a>
+    <a href="#io">5. Input / Output</a>
+    <a href="#strings">6. Strings</a>
+    <a href="#conditions">7. If / Else</a>
+    <a href="#loops">8. Loops</a>
+    <a href="#lists">9. Lists</a>
+    <a href="#tuples">10. Tuples</a>
+    <a href="#sets">11. Sets</a>
+    <a href="#dicts">12. Dictionaries</a>
+    <a href="#functions">13. Functions</a>
+    <a href="#lambda">14. Lambda</a>
+    <a href="#comprehensions">15. Comprehensions</a>
+    <a href="#modules">16. Modules</a>
+    <a href="#files">17. File Handling</a>
+    <a href="#exceptions">18. Exceptions</a>
+    <a href="#oop">19. OOP — Classes</a>
+    <a href="#inheritance">20. Inheritance</a>
+    <a href="#iterators">21. Iterators</a>
+    <a href="#generators">22. Generators</a>
+    <a href="#decorators">23. Decorators</a>
+    <a href="#args">24. *args / **kwargs</a>
+    <a href="#async">25. Async / Await</a>
+  </nav>
+
+  <main>
+
+    <section class="topic" id="intro">
+      <h2>1. What is Python <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> Python is a simple, high-level, interpreted programming language used for almost everything.</p>
+      <div class="label">Example</div>
+<pre><code>print("Hello, World!")
+<span class="ex"># Output: Hello, World!</span></code></pre>
+    </section>
+
+    <section class="topic" id="variables">
+      <h2>2. Variables <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A variable is a name that stores a value in memory.</p>
+<pre><code>name = "Alex"
+age = 20
+print(name, age)
+<span class="ex"># Output: Alex 20</span></code></pre>
+    </section>
+
+    <section class="topic" id="datatypes">
+      <h2>3. Data Types <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> Data types tell Python what kind of value a variable holds (number, text, etc.).</p>
+<pre><code>a = 10          # int
+b = 3.14        # float
+c = "hi"        # str
+d = True        # bool
+print(type(a), type(b), type(c), type(d))</code></pre>
+    </section>
+
+    <section class="topic" id="operators">
+      <h2>4. Operators <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> Operators are symbols that perform operations on values like +, -, *, /, %, ==.</p>
+<pre><code>print(5 + 2)   # 7
+print(5 // 2)  # 2  (floor div)
+print(5 ** 2)  # 25 (power)
+print(5 == 5)  # True</code></pre>
+    </section>
+
+    <section class="topic" id="io">
+      <h2>5. Input / Output <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> <code>input()</code> reads from the user, <code>print()</code> shows output on screen.</p>
+<pre><code>name = input("Your name: ")
+print("Hello,", name)</code></pre>
+    </section>
+
+    <section class="topic" id="strings">
+      <h2>6. Strings <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A string is a sequence of characters written inside quotes.</p>
+<pre><code>s = "Python"
+print(s.upper())     # PYTHON
+print(s[0:3])        # Pyt
+print(len(s))        # 6
+print(f"Hi {s}!")    # Hi Python!</code></pre>
+    </section>
+
+    <section class="topic" id="conditions">
+      <h2>7. If / Else <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> Conditions let your program choose what to do based on true/false.</p>
+<pre><code>age = 18
+if age &gt;= 18:
+    print("Adult")
+elif age &gt; 12:
+    print("Teen")
+else:
+    print("Kid")</code></pre>
+    </section>
+
+    <section class="topic" id="loops">
+      <h2>8. Loops <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> Loops repeat a block of code multiple times.</p>
+<pre><code>for i in range(3):
+    print("Hi", i)
+
+n = 0
+while n &lt; 3:
+    print(n)
+    n += 1</code></pre>
+    </section>
+
+    <section class="topic" id="lists">
+      <h2>9. Lists <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A list is an ordered, changeable collection of items written in [ ].</p>
+<pre><code>fruits = ["apple", "banana", "cherry"]
+fruits.append("mango")
+print(fruits[1])    # banana
+print(len(fruits))  # 4</code></pre>
+    </section>
+
+    <section class="topic" id="tuples">
+      <h2>10. Tuples <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A tuple is an ordered, unchangeable collection written in ( ).</p>
+<pre><code>point = (3, 5)
+print(point[0])  # 3
+# point[0] = 9  -> ❌ Error</code></pre>
+    </section>
+
+    <section class="topic" id="sets">
+      <h2>11. Sets <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A set is an unordered collection of unique items written in { }.</p>
+<pre><code>nums = {1, 2, 2, 3}
+print(nums)        # {1, 2, 3}
+nums.add(4)
+print(nums)</code></pre>
+    </section>
+
+    <section class="topic" id="dicts">
+      <h2>12. Dictionaries <span class="tag">basic</span></h2>
+      <p class="def"><b>Definition:</b> A dictionary stores data as key:value pairs in { }.</p>
+<pre><code>student = {"name": "Sam", "age": 20}
+print(student["name"])     # Sam
+student["grade"] = "A"
+print(student)</code></pre>
+    </section>
+
+    <section class="topic" id="functions">
+      <h2>13. Functions <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> A function is a reusable block of code that performs a task.</p>
+<pre><code>def greet(name):
+    return f"Hello, {name}"
+
+print(greet("Alex"))   # Hello, Alex</code></pre>
+    </section>
+
+    <section class="topic" id="lambda">
+      <h2>14. Lambda Functions <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> A lambda is a small one-line anonymous function.</p>
+<pre><code>square = lambda x: x * x
+print(square(5))    # 25</code></pre>
+    </section>
+
+    <section class="topic" id="comprehensions">
+      <h2>15. List Comprehensions <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> A short way to create a new list from an existing iterable.</p>
+<pre><code>squares = [x*x for x in range(5)]
+print(squares)   # [0, 1, 4, 9, 16]
+
+evens = [x for x in range(10) if x % 2 == 0]
+print(evens)     # [0, 2, 4, 6, 8]</code></pre>
+    </section>
+
+    <section class="topic" id="modules">
+      <h2>16. Modules <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> A module is a Python file you can import to reuse its code.</p>
+<pre><code>import math
+print(math.sqrt(16))    # 4.0
+print(math.pi)          # 3.1415...</code></pre>
+    </section>
+
+    <section class="topic" id="files">
+      <h2>17. File Handling <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> File handling lets you read or write data to files on disk.</p>
+<pre><code>with open("notes.txt", "w") as f:
+    f.write("Hello file!")
+
+with open("notes.txt") as f:
+    print(f.read())     # Hello file!</code></pre>
+    </section>
+
+    <section class="topic" id="exceptions">
+      <h2>18. Exception Handling <span class="tag">intermediate</span></h2>
+      <p class="def"><b>Definition:</b> A way to catch and handle errors so the program doesn't crash.</p>
+<pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("Done")</code></pre>
+    </section>
+
+    <section class="topic" id="oop">
+      <h2>19. OOP — Classes &amp; Objects <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> A class is a blueprint; an object is an instance created from that blueprint.</p>
+<pre><code>class Dog:
+    def __init__(self, name):
+        self.name = name
+    def bark(self):
+        print(self.name, "says woof!")
+
+d = Dog("Rex")
+d.bark()    # Rex says woof!</code></pre>
+    </section>
+
+    <section class="topic" id="inheritance">
+      <h2>20. Inheritance <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> Inheritance lets one class reuse the properties and methods of another.</p>
+<pre><code>class Animal:
+    def speak(self): print("Some sound")
+
+class Cat(Animal):
+    def speak(self): print("Meow")
+
+Cat().speak()   # Meow</code></pre>
+    </section>
+
+    <section class="topic" id="iterators">
+      <h2>21. Iterators <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> An iterator is an object that returns items one by one using <code>next()</code>.</p>
+<pre><code>nums = iter([1, 2, 3])
+print(next(nums))   # 1
+print(next(nums))   # 2</code></pre>
+    </section>
+
+    <section class="topic" id="generators">
+      <h2>22. Generators <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> A generator is a function that yields values lazily, one at a time.</p>
+<pre><code>def count_up(n):
+    i = 1
+    while i &lt;= n:
+        yield i
+        i += 1
+
+for x in count_up(3):
+    print(x)   # 1 2 3</code></pre>
+    </section>
+
+    <section class="topic" id="decorators">
+      <h2>23. Decorators <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> A decorator is a function that adds extra behavior to another function.</p>
+<pre><code>def loud(func):
+    def wrapper():
+        print("** START **")
+        func()
+        print("** END **")
+    return wrapper
+
+@loud
+def hello():
+    print("Hello!")
+
+hello()</code></pre>
+    </section>
+
+    <section class="topic" id="args">
+      <h2>24. *args and **kwargs <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> <code>*args</code> takes many positional arguments; <code>**kwargs</code> takes many keyword arguments.</p>
+<pre><code>def show(*args, **kwargs):
+    print(args)      # tuple
+    print(kwargs)    # dict
+
+show(1, 2, 3, name="Alex", age=20)</code></pre>
+    </section>
+
+    <section class="topic" id="async">
+      <h2>25. Async / Await <span class="tag">advanced</span></h2>
+      <p class="def"><b>Definition:</b> Async code lets the program do other work while waiting for slow tasks.</p>
+<pre><code>import asyncio
+
+async def main():
+    print("start")
+    await asyncio.sleep(1)
+    print("done")
+
+asyncio.run(main())</code></pre>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
